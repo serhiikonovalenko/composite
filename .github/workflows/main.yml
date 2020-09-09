@@ -5,10 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
+
     - uses: actions/checkout@v2
+
     - id: foo
       uses: ./
       with:
         who-to-greet: 'Mona the Octocat'
+      branding:
+        icon: 'award'  
+        color: 'green'
+
+
     - run: echo random-number ${{ steps.foo.outputs.random-number }} 
       shell: bash
